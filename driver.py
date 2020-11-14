@@ -30,7 +30,7 @@ def main():
             factors.main(args)
         elif args[0] == "gen":
             gen.main(args)
-        elif args[0] == "gcf":
+        elif args[0] == "gcf" or args[0] == "hcf":
             gcf.main(args)
         elif args[0] == "lcm":
             lcm.main(args)
