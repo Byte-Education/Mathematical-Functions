@@ -31,7 +31,11 @@ Run `make`, then `./calc -h` for all options. Follow options available
 ### C Options post make
 
 `./calc gen n low high`: Get `n` random numbers from `low` to `high`
+
 `./calc factors get n`: Get the number and the factors of given number
+
 `./calc factors n low high`: Get the number of `n` factors within the range of `low` to `high`
+
 `./calc gcf a b`: Get the Greatest Common Factor between `a` to `b`
+
 `./calc lcm a b`: Get the Least common multiple between `a` to `b`
