@@ -1,0 +1,4 @@
+*.java
+__pycache__
+*.class
+settings.json
