@@ -4,8 +4,7 @@
 #include <string.h>
 #include "gen.h"
 
-int FACTORS_LIMIT = 30;
-
+int FACTORS_LIMIT = 50;
 int factors(int n, int *nums)
 {
   int count = 0;
@@ -15,6 +14,11 @@ int factors(int n, int *nums)
     if (n % i == 0)
     {
       *(nums + count++) = i;
+    }
+    if (count == FACTORS_LIMIT + 1)
+    {
+      printf("At limit, cannot add more! Extend limit!\n");
+      break;
     }
   }
   return count;
@@ -37,12 +41,13 @@ int run_factors(int argc, char *argv[])
   {
     n = atoi(argv[3]);
     nums = (int *)(malloc(sizeof(int) * n));
-    
+
     factors(n, nums);
     printf("Number; factors\n");
     for (int i = 0; i < n; i++)
     {
-      if(nums[i] == 0){
+      if (nums[i] == 0)
+      {
         break;
       }
       printf("%d ", nums[i]);
@@ -89,13 +94,13 @@ int run_factors(int argc, char *argv[])
   int *factor_list[n];
   for (int i = 0; i < n; i++)
   {
-    factor_list[i] = (int *)(malloc(sizeof(int) * FACTORS_LIMIT));
+    factor_list[i] = (int *)(malloc(sizeof(int) * (FACTORS_LIMIT + 1)));
   }
   generate_factors(n, low, high, nums, factor_list);
   printf("Number; factors\n");
   for (int i = 0; i < n; i++)
   {
-    for (int j = 0; j < 20; j++)
+    for (int j = 0; j < FACTORS_LIMIT + 1; j++)
     {
       if (factor_list[i][j] != 0)
       {
