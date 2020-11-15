@@ -2,12 +2,12 @@
 bin=calc
 
 # Compiler/linker flags
-CFLAGS += -g -Wall -fPIC -DLOGGER=$(LOGGER)
+CFLAGS += -g -Wall -fPIC 
 LDLIBS += -lm -lncurses
 LDFLAGS +=
 
 # Source C files
-src=main.c factors.c gcf.c lcm.c gen.c
+src=main.c factors.c gcf.c lcm.c gen.c prime.c factorial.c
 obj=$(src:.c=.o)
 
 # Makefile recipes --
@@ -32,6 +32,8 @@ factors.o: factors.c factors.h
 gen.o: gen.c gen.h
 gcf.o: gcf.c gcf.h
 lcm.o: lcm.c lcm.h
+prime.o: prime.c prime.h
+factorial.o: factorial.c factorial.h
 
 
 run:  $(bin) libmain.so
