@@ -4,6 +4,8 @@
 #include <string.h>
 #include "gen.h"
 
+int FACTORS_LIMIT = 30;
+
 int factors(int n, int *nums)
 {
   int count = 0;
@@ -87,7 +89,7 @@ int run_factors(int argc, char *argv[])
   int *factor_list[n];
   for (int i = 0; i < n; i++)
   {
-    factor_list[i] = (int *)(malloc(sizeof(int) * 20));
+    factor_list[i] = (int *)(malloc(sizeof(int) * FACTORS_LIMIT));
   }
   generate_factors(n, low, high, nums, factor_list);
   printf("Number; factors\n");
