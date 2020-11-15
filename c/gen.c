@@ -43,6 +43,7 @@ int run_gen(int argc, char *argv[])
     high = atoi(argv[4]);
     break;
   }
+  n = abs(n);
 
   nums = (int *)(malloc(sizeof(int) * n));
   gen(n, low, high, nums);
